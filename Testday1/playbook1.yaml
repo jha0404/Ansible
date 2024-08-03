@@ -1,0 +1,13 @@
+-
+  name : Playbook1
+  hosts: all
+  tasks:
+    - name: making Directory in Remote server
+      shell: mkdir jha
+      args:
+        chdir: /home/ec2-user
+    - name : running and capturing command output
+      shell: netstat -nltp >> jha.txt
+      args:
+        chdir: /home/ec2-user
+  

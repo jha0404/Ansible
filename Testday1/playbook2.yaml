@@ -1,0 +1,10 @@
+---
+ - name: Playbook1
+   hosts: all
+   tasks:
+    - name: running netstat command
+      shell: netstat -nltp
+      register: dc
+    - name: checking ssh port
+      shell: ping -c5 www.google.com >> jha.txt
+      when: dc.rc != 0 

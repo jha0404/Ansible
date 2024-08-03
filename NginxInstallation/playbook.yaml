@@ -1,0 +1,17 @@
+-
+  name: Play1
+  hosts: all
+  tasks:
+    - name: Nginx Installation
+      become: yes
+      become_user: root
+      apt:
+        name: nginx
+        state: latest
+    - name: start Nginx
+      become: yes
+      become_user: root
+      service:
+        name: nginx
+        state: started
+        enabled: yes

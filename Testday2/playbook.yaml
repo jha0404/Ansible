@@ -1,0 +1,24 @@
+---
+- name: play1
+  hosts: all
+  vars:
+    command:
+      ping: True
+      netstat: True
+      ip: False
+  tasks:
+    - name: ping_play
+      shell: ping -c5 www.google.com >> jha.txt
+      args:
+        chdir: /home/ec2-user
+      when: command.ping == 1
+    - name: netstat_play
+      shell: netstat -nltp >> jha.txt
+      args:
+        chdir: /home/ec2-user
+      #when: command.netstat == True
+    - name: ip_play
+      shell: ip a >> jha.txt
+      args:
+        chdir: /home/ec2-user
+      #when: command.ip == True
