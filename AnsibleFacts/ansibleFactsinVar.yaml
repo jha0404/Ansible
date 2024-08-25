@@ -1,0 +1,11 @@
+-
+  name: Gather all facts
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: getting facts in Register
+      setup:
+      register: all_facts
+    - name: output facts
+      debug:
+        msg: '{{ all_facts }}'
