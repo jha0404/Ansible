@@ -1,0 +1,11 @@
+-
+  name: Testing localaction with some Random Modules
+  hosts: all
+  gather_facts: no
+  tasks:
+   - name: Running local tasks
+     copy:
+      content: "hello from ansible to local system"
+      dest: /home/jha/ansible/Ansible/LocalActionDirective/1.txt
+     delegate_to: localhost
+# In this Playbook we are playing with delegate_to: Basically with delegate_to: we can run ansible Task on any other hosts which are not mentioned in inventory. Here in this playbook we wants to run the task in localhost

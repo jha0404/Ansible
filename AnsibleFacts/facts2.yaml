@@ -1,0 +1,12 @@
+-
+  name: Gather Facts and store in remote machine
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Gathering Facts
+      setup:
+      register: all_facts
+    - name: storing facts to remote machine
+      copy:
+        content: '{{ all_facts | to_json(indent=2) }}'
+        dest: /home/ubuntu/facts.json

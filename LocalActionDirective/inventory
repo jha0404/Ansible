@@ -1,0 +1,2 @@
+[webservers]
+webserver1 ansible_host=ec2-3-111-187-85.ap-south-1.compute.amazonaws.com ansible_user=ubuntu ansible_ssh_private_key_file=/home/jha/ansible/Ansible/ansiblesshkey.pem
